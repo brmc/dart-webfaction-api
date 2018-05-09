@@ -1,0 +1,13 @@
+name: webfaction_api
+description: A starting point for Dart libraries or applications.
+version: 0.0.1
+
+environment:
+  sdk: '>=1.9.9'
+
+dependencies:
+  xml_rpc:
+    # only until support for dart 2+ is published in the official repo
+    git: git@github.com:brmc/dart-xmlrpc.git
+dev_dependencies:
+  test: ^0.12.0

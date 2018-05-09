@@ -1,0 +1,136 @@
+import 'dart:async';
+
+import 'package:webfaction_api/src/api/api.dart';
+import 'package:webfaction_api/src/data/email.dart';
+
+class MailboxApi extends Api {
+  MailboxApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
+
+  changePassword(String mailboxName, String password) =>
+      call('change_mailbox_password', [mailboxName, password]);
+
+  changePasswordFromInstance(Mailbox mailbox, String password) =>
+      changePassword(mailbox.name, password);
+
+  create(String mailboxName,
+          [enableSpamProtection = true,
+          discardSpam = false,
+          String spamRedirectFolder = '',
+          useManualProcmailrc = false,
+          String manualProcmailrc = '']) =>
+      call('create_mailbox', [
+        mailboxName,
+        enableSpamProtection,
+        discardSpam,
+        spamRedirectFolder,
+        useManualProcmailrc,
+        manualProcmailrc,
+      ]);
+
+  createFromInstance(Mailbox mailbox) => create(
+        mailbox.name,
+        mailbox.enableSpamProtection,
+        mailbox.discardSpam,
+        mailbox.spamRedirectFolder,
+        mailbox.useManualProcmailrc,
+        mailbox.manualProcmailrc,
+      );
+
+  delete(String mailboxName) => call('delete_mailbox', [mailboxName]);
+
+  deleteFromInstance(Mailbox mailbox) => delete(mailbox.name);
+
+  list() => call('list_mailboxes');
+
+  update(String mailboxName,
+          [enableSpamProtection = true,
+          discardSpam = false,
+          String spamRedirectFolder = '',
+          useManualProcmailrc = false,
+          String manualProcmailrc = '']) =>
+      call('update_mailbox', [
+        mailboxName,
+        enableSpamProtection,
+        discardSpam,
+        spamRedirectFolder,
+        useManualProcmailrc,
+        manualProcmailrc,
+      ]);
+
+  updateFromInstance(Mailbox mailbox) => update(
+        mailbox.name,
+        mailbox.enableSpamProtection,
+        mailbox.discardSpam,
+        mailbox.spamRedirectFolder,
+        mailbox.useManualProcmailrc,
+        mailbox.manualProcmailrc,
+      );
+}
+
+class EmailAddressApi extends Api {
+  EmailAddressApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
+
+  Future create(String address, String targets,
+          [bool autoresponderOn = false,
+          String autoresponderSubject = '',
+          String autoresponderMessage = '',
+          String autoresponderFrom = '',
+          String scriptMachine = '',
+          String scriptPath = '']) =>
+      call('create_email', [
+        address,
+        targets,
+        autoresponderOn,
+        autoresponderSubject,
+        autoresponderMessage,
+        autoresponderFrom,
+        scriptMachine,
+        scriptPath
+      ]);
+
+  Future createFromInstance(Email email) => create(
+        email.address,
+        email.targets,
+        email.autoresponderOn,
+        email.autoresponderSubject,
+        email.autoresponderMessage,
+        email.autoresponderFrom,
+        email.scriptMachine,
+        email.scriptPath,
+      );
+
+  delete(String address) => call('delete_email', [address]);
+
+  deleteFromInstance(Email email) => delete(email.address);
+
+  Future list() => call('list_emails');
+
+  Future update(String address, List targets,
+          [bool autoresponderOn = false,
+          String autoresponderSubject = '',
+          String autoresponderMessage = '',
+          String autoresponderFrom = '',
+          String scriptMachine = '',
+          String scriptPath = '']) =>
+      call('update_email', [
+        address,
+        targets,
+        autoresponderOn,
+        autoresponderSubject,
+        autoresponderMessage,
+        autoresponderFrom,
+        scriptMachine,
+        scriptPath
+      ]);
+
+  Future updateFromInstance(Email email) => update(
+        email.address,
+        email.targets.split(','),
+        email.autoresponderOn,
+        email.autoresponderSubject,
+        email.autoresponderMessage,
+        email.autoresponderFrom,
+        email.scriptMachine,
+        email.scriptPath,
+      );
+}
