@@ -12,7 +12,7 @@ Webfaction info: https://www.webfaction.com/?aid=50399 (affiliate link)
 
 ```
 environment:
-  sdk: ">1.9.9 <=2.0.0"
+  sdk: "<2.0.0"
 
 dependencies:
   webfaction_api: '>=0.8.0'

@@ -3,11 +3,9 @@ description: A starting point for Dart libraries or applications.
 version: 0.0.1
 
 environment:
-  sdk: '>=1.9.9'
+  sdk: '< 2.0.0'
 
 dependencies:
-  xml_rpc:
-    # only until support for dart 2+ is published in the official repo
-    git: git@github.com:brmc/dart-xmlrpc.git
+  xml_rpc: '>=0.1.4'
 dev_dependencies:
   test: ^0.12.0

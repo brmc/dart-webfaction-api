@@ -14,9 +14,6 @@ class MiscApi extends Api {
       runPhpScript(script.path, script.codeBefore);
 
   Future setApacheAcl(List<String> paths, String permission, bool recursive) {
-    assert(ApacheAcl.permissionIsValid(permission),
-        ApacheAcl.getInvalidMsg(permission));
-
     return call('set_apache_acl', [paths, permission, recursive]);
   }
 
