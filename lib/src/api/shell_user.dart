@@ -4,8 +4,6 @@ import 'package:webfaction_api/src/data/shell_user.dart';
 
 import 'api.dart';
 
-var shells = ['none', 'bash', 'sh', 'ksh'];
-
 class ShellUserApi extends Api {
   ShellUserApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
 
@@ -16,10 +14,8 @@ class ShellUserApi extends Api {
       changePassword(user.username, password);
 
   Future create(String username,
-      [String shell = 'none', List<String> groups = const []]) {
-    assert(shells.contains(shell));
-    return call('create_user', [username, shell, groups]);
-  }
+          [String shell = 'none', List<String> groups = const []]) =>
+      call('create_user', [username, shell, groups]);
 
   Future createFromInstance(User user) =>
       create(user.username, user.shell, user.groups);
