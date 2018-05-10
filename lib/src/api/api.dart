@@ -9,6 +9,11 @@ abstract class Api {
 
   Api(this._sessionId, [this._rpc = xml_rpc.call]);
 
+  /// Makes an unstructured remote procedure call
+  ///
+  /// Use this if a method is missing or broken.
+  ///
+  /// You do not need to pass the [sessionId]. It will be passed for you
   Future call(String method, [List<dynamic> params]) {
     params = params ?? [];
     params.insert(0, _sessionId);

@@ -8,11 +8,10 @@ class AppApi extends Api {
 
   Future create(String name, String type,
       [bool autostart = false,
-      String extra_info = '',
-      bool open_port = false]) {
-    var params = [name, type, autostart, extra_info, open_port];
+      String extraInfo = '',
+      bool openPort = false]) {
 
-    return call('create_app', params);
+    return call('create_app', [name, type, autostart, extraInfo, openPort]);
   }
 
   Future createFromInstance(App app) =>
