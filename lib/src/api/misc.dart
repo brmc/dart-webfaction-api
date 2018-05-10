@@ -15,9 +15,9 @@ class MiscApi extends Api {
 
   Future setApacheAcl(List<String> paths, String permission, bool recursive) {
     assert(ApacheAcl.permissionIsValid(permission),
-    ApacheAcl.getInvalidMsg(permission));
+        ApacheAcl.getInvalidMsg(permission));
 
-    return call('set_apache_acl',[paths,permission,recursive]);
+    return call('set_apache_acl', [paths, permission, recursive]);
   }
 
   Future setApacheAclFromInstance(ApacheAcl acl) =>

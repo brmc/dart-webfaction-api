@@ -9,9 +9,9 @@ class Certificate {
 
   Certificate.fromMap(Map map)
       : this(
-    map['name'],
-    map['certificate'],
-    map['private_key'],
-    map['intermediates'],
-  );
+          map['name'],
+          map['certificate'],
+          map['private_key'],
+          map['intermediates'],
+        );
 }

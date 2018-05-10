@@ -7,10 +7,7 @@ class AppApi extends Api {
   AppApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
 
   Future create(String name, String type,
-      [bool autostart = false,
-      String extraInfo = '',
-      bool openPort = false]) {
-
+      [bool autostart = false, String extraInfo = '', bool openPort = false]) {
     return call('create_app', [name, type, autostart, extraInfo, openPort]);
   }
 

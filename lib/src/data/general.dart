@@ -14,13 +14,13 @@ class DiskUsage {
 
   DiskUsage.fromMap(Map map)
       : this(
-      createList(HomeDirectory, map['home_directories']),
-      createList(MailboxUsage, map['mailboxes']),
-      createList(MysqlDatabaseUsage, map['mysql_databases']),
-      createList(PostgresDatabaseUsage, map['postgresql_databases']),
-      map['total'],
-      map['quota'],
-      map['percentage']);
+            createList(HomeDirectory, map['home_directories']),
+            createList(MailboxUsage, map['mailboxes']),
+            createList(MysqlDatabaseUsage, map['mysql_databases']),
+            createList(PostgresDatabaseUsage, map['postgresql_databases']),
+            map['total'],
+            map['quota'],
+            map['percentage']);
 }
 
 class HomeDirectory {
