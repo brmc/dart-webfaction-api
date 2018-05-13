@@ -1,9 +1,9 @@
 name: webfaction_api
-description: A starting point for Dart libraries or applications.
-version: 0.0.1
+description: A client for the Webfaction API
+version: 0.8.0
 
 environment:
-  sdk: '< 2.0.0'
+  sdk: '>1.24.0 < 2.0.0'
 
 dependencies:
   xml_rpc: '>=0.1.4'
