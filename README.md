@@ -6,6 +6,8 @@ Official reference: [https://docs.webfaction.com/xmlrpc-api/](https://docs.webfa
 
 Webfaction info: [https://www.webfaction.com/?aid=50399](https://www.webfaction.com/?aid=50399) (affiliate link)
 
+
+
 ## Installation
 
 1. `pubspec.yaml`:
@@ -20,6 +22,10 @@ dependencies:
 
 2. `pub get`
 
+## Documentation
+
+    ~/dart-webfaction-api/ $ dartdoc
+    ~/dart-webfaction-api/ $ pub serve doc/api
 
 ## Example
 
