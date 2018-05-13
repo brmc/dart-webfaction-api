@@ -1,3 +1,6 @@
+import 'package:webfaction_api/src/api/shell_user.dart';
+
+/// See [ShellUserApi]
 class User {
   String username;
   String shell;

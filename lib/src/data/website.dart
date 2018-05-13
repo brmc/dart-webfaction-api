@@ -1,8 +1,10 @@
+import 'package:webfaction_api/src/api/website.dart';
 import 'package:webfaction_api/src/data/app.dart';
 import 'package:webfaction_api/src/data/certificate.dart';
 import 'package:webfaction_api/src/data/domain.dart';
 import 'package:webfaction_api/src/data/server.dart';
 
+/// See [WebsiteApi]
 class SiteApp {
   String path;
   String appName;
@@ -14,6 +16,7 @@ class SiteApp {
   SiteApp.fromMap(Map map) : this(map['site_apps'][0], map['site_apps'][1]);
 }
 
+/// See [WebsiteApi]
 class Website {
   String name;
   String ip;

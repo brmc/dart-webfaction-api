@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:webfaction_api/src/api/api.dart';
 import 'package:webfaction_api/src/data/email.dart';
 
+/// CRUD and password management operations for mailboxes
 class MailboxApi extends Api {
   MailboxApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
 
@@ -67,9 +68,13 @@ class MailboxApi extends Api {
       );
 }
 
+/// CRUD operations for email addresses
+///
+/// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#addresses](https://docs.webfaction.com/xmlrpc-api/apiref.html#addresses)
 class EmailAddressApi extends Api {
   EmailAddressApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
 
+  /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_email](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_email)
   Future create(String address, String targets,
           [bool autoresponderOn = false,
           String autoresponderSubject = '',
@@ -99,12 +104,15 @@ class EmailAddressApi extends Api {
         email.scriptPath,
       );
 
+  /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-delete_email](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-delete_email)
   delete(String address) => call('delete_email', [address]);
 
   deleteFromInstance(Email email) => delete(email.address);
 
+  /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-list_emails](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-list_emails)
   Future list() => call('list_emails');
 
+  /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-update_email](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-update_email)
   Future update(String address, List targets,
           [bool autoresponderOn = false,
           String autoresponderSubject = '',

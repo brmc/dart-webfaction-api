@@ -4,9 +4,13 @@ import 'package:webfaction_api/src/data/dns.dart';
 
 import 'api.dart';
 
+/// Create, list, and delete DNS overrides
+///
+/// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#dns](https://docs.webfaction.com/xmlrpc-api/apiref.html#dns)
 class DnsApi extends Api {
   DnsApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
 
+  /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_dns_override](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_dns_override)
   Future createOverride(String domain,
       [aIp = '',
       cname = '',
@@ -38,6 +42,7 @@ class DnsApi extends Api {
       obj.aaaaIp,
       obj.srvRecord);
 
+  /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-delete_dns_override](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-delete_dns_override)
   Future deleteOverride(String domain,
       [aIp = '',
       cname = '',
@@ -69,5 +74,6 @@ class DnsApi extends Api {
       obj.aaaaIp,
       obj.srvRecord);
 
+  /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-list_dns_overrides](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-list_dns_overrides)
   Future listOverrides() => call('list_dns_overrides');
 }

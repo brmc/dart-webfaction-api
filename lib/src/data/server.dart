@@ -1,3 +1,6 @@
+import 'package:webfaction_api/src/api/server.dart';
+
+/// See [ServerApi]
 class Ip {
   num id;
   String machine;
@@ -14,6 +17,7 @@ class Ip {
   }
 }
 
+/// See [ServerApi]
 class Machine {
   num id;
   String name;

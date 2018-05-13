@@ -2,9 +2,9 @@
 
 A dart client for webfaction's RPC API.
 
-Official reference: https://docs.webfaction.com/xmlrpc-api/
+Official reference: [https://docs.webfaction.com/xmlrpc-api/](https://docs.webfaction.com/xmlrpc-api/)
 
-Webfaction info: https://www.webfaction.com/?aid=50399 (affiliate link)
+Webfaction info: [https://www.webfaction.com/?aid=50399](https://www.webfaction.com/?aid=50399) (affiliate link)
 
 ## Installation
 
@@ -12,7 +12,7 @@ Webfaction info: https://www.webfaction.com/?aid=50399 (affiliate link)
 
 ```
 environment:
-  sdk: "<2.0.0"
+  sdk: '>1.24.0 <2.0.0'
 
 dependencies:
   webfaction_api: '>=0.8.0'
@@ -24,7 +24,7 @@ dependencies:
 ## Example
 
     import 'package:webfaction_api/client.dart';
-    import 'package:webfaction_api/containers.dart';
+    import 'package:webfaction_api/response.dart';
 
     main() async {
       var client = new Client('username', 'password', 'SomeServer543');
@@ -35,7 +35,7 @@ dependencies:
       client.login().then((response) async {
         List<Map> rawResponse = await client.app.list();
 
-        // Objects imported from `containers.dart`
+        // Response objects imported from `response.dart`
         List<App> appListManuallyCreated = await client.app.list()
             .then((response) => response.map((data) => new App.fromMap(data)));
 
@@ -55,16 +55,26 @@ dependencies:
     }
 
 
-## Usage
+## Usage Summary
 
 
- 1. Instanciate a client with your webfaction `username`, `password`, and `server name`
+1. Import `client.dart` for the client and API classes. Import `response.dart` to use the response objects and related helper function
 
-    `var client = new Client('username', 'password, 'Server153');
+
+    import 'package:webfaction_api/client.dart';
+    import 'package:webfaction_api/response.dart';
+
+1. Instantiate a client with your webfaction `username`, `password`, and `server name`
+
+
+    var client = new Client('username', 'password, 'Server153');
+
 
 2. Login. The session ID is stored in the client so there is no need to pass it to subsequent calls. According to webfaction, the session ID remains valid for one hour
 
-   client.login();
+
+    client.login();
+
 
 3. Call api methods.
 
@@ -87,12 +97,13 @@ A couple slight deviations from this convention are as follows:
 The method names use camel case instead of snake case, as per dart style recommendations, and the 'section' is removed from the name:
 
 `create_db` becomes `client.db.create`
+
 `create_db_user` becomes `client.db.createUser`
 
-## API object data containers / structs
+## API response objects
 
 A collection of dumb objects have been provided that represent API input or output.
 
-Most methods have a corresponding `<methodName>FromInstance` or `FromInstances` method that accept object instances.
+Most methods have a corresponding `<methodName>FromInstance` or `FromInstances` method that can be called with objects instead of manually passing individual parameters.
 
-Objects intended to be used with API methods that return data have a `.fromMap` factory method that can be instanciated  directly with the response data.
+Objects intended to be used with API methods that return data have a `.fromMap` factory constructor that can be used to instanciate directly with the response data.

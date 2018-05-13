@@ -1,3 +1,7 @@
+import 'package:webfaction_api/src/client.dart';
+
+/// The second part of the [Client.login] response is the account info,
+/// but it is probably mostly useless
 class Account {
   String username;
   String webServer;
@@ -5,11 +9,9 @@ class Account {
   String mailServer;
   num id;
 
-  Account(Map map) {
-    username = map['username'];
-    webServer = map['webServer'];
-    home = map['home'];
-    mailServer = map['mailServer'];
-    id = map['id'];
-  }
+  Account(this.username, this.webServer, this.home, this.mailServer, this.id);
+
+  Account.fromMap(Map map)
+      : this(map['username'], map['web_server'], map['home'],
+            map['mail_server'], map['id']);
 }

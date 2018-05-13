@@ -1,5 +1,7 @@
+import 'package:webfaction_api/src/api/general.dart';
 import 'package:webfaction_api/src/data/util.dart';
 
+/// See [GeneralApi]
 class DiskUsage {
   List<HomeDirectory> homeDirectories;
   List<MailboxUsage> mailboxes;
@@ -23,6 +25,7 @@ class DiskUsage {
             map['percentage']);
 }
 
+/// See [GeneralApi]
 class HomeDirectory {
   String lastReading;
   String machine;
@@ -35,6 +38,7 @@ class HomeDirectory {
       : this(map['last_reading'], map['machine'], map['username'], map['size']);
 }
 
+/// See [GeneralApi]
 class MailboxUsage {
   String lastReading;
   String name;
@@ -46,6 +50,7 @@ class MailboxUsage {
       : this(map['lastReading'], map['name'], map['size']);
 }
 
+/// See [GeneralApi]
 class MysqlDatabaseUsage {
   String lastReading;
   String name;
@@ -57,6 +62,7 @@ class MysqlDatabaseUsage {
       : this(map['lastReading'], map['name'], map['size']);
 }
 
+/// See [GeneralApi]
 class PostgresDatabaseUsage {
   String lastReading;
   String name;

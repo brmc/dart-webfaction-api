@@ -1,3 +1,6 @@
+import 'package:webfaction_api/src/api/app.dart';
+
+/// See [AppApi]
 class App {
   num id;
   String name;

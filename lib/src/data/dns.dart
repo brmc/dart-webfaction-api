@@ -1,3 +1,6 @@
+import 'package:webfaction_api/src/api/dns.dart';
+
+/// See [DnsApi]
 class DnsOverride {
   String domain;
   String aIp;

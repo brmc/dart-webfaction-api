@@ -1,4 +1,5 @@
-library webfaction_data;
+/// This library contains simple objects that can be passed around to work with api responses
+library response;
 
 export 'src/data/app.dart';
 export 'src/data/account.dart';

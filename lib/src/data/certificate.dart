@@ -1,3 +1,6 @@
+import 'package:webfaction_api/src/api/certificate.dart';
+
+/// See [CertificateApi]
 class Certificate {
   String name;
   String certificate;

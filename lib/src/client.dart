@@ -18,6 +18,7 @@ import './api/misc.dart';
 import './api/server.dart';
 import './api/shell_user.dart';
 
+/// The main entry point to the API
 class Client implements Api {
   String _username;
   String _password;

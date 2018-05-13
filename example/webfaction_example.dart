@@ -1,5 +1,5 @@
 import 'package:webfaction_api/client.dart';
-import 'package:webfaction_api/containers.dart';
+import 'package:webfaction_api/response.dart';
 
 main() async {
   var client = new Client('username', 'password', 'SomeServer543');
@@ -10,7 +10,7 @@ main() async {
   client.login().then((response) async {
     List<Map> rawResponse = await client.app.list();
 
-    // Objects imported from `containers.dart`
+    // Objects imported from `response.dart`
     List<App> appListManuallyCreated = await client.app.list()
         .then((response) => response.map((data) => new App.fromMap(data)));
 

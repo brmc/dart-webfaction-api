@@ -1,31 +1,11 @@
 import 'dart:async';
 
 import 'package:test/test.dart';
-import 'package:webfaction_api/src/api/app.dart';
-import 'package:webfaction_api/src/api/certificate.dart';
-import 'package:webfaction_api/src/api/cron.dart';
-import 'package:webfaction_api/src/api/db.dart';
-import 'package:webfaction_api/src/api/dns.dart';
-import 'package:webfaction_api/src/api/domain.dart';
-import 'package:webfaction_api/src/api/email.dart';
-import 'package:webfaction_api/src/api/file.dart';
-import 'package:webfaction_api/src/api/general.dart';
-import 'package:webfaction_api/src/api/misc.dart';
-import 'package:webfaction_api/src/api/server.dart';
-import 'package:webfaction_api/src/api/shell_user.dart';
-import 'package:webfaction_api/src/api/website.dart';
-import 'package:webfaction_api/src/data/app.dart';
-import 'package:webfaction_api/src/data/certificate.dart';
-import 'package:webfaction_api/src/data/db.dart';
-import 'package:webfaction_api/src/data/dns.dart';
-import 'package:webfaction_api/src/data/domain.dart';
-import 'package:webfaction_api/src/data/email.dart';
-import 'package:webfaction_api/src/data/misc.dart';
-import 'package:webfaction_api/src/data/shell_user.dart';
-import 'package:webfaction_api/src/data/website.dart';
+import 'package:webfaction_api/client.dart';
+import 'package:webfaction_api/response.dart';
 
-import 'typeOrder.dart';
-import 'typemap.dart';
+import 'type_order.dart';
+import 'type_map.dart';
 
 convertSnakeCaseToCamelCase(String str) => str.replaceAllMapped(
     new RegExp('_([a-z])'), (Match m) => m.group(1).toUpperCase());
@@ -234,12 +214,12 @@ void main() {
       checkTypeOrder(api.deleteFromInstance(user));
       checkTypeOrder(api.list());
     });
-    test('All methods should be called', () {
-      var allMeth = new Set.from(allMethods);
-      allMeth.addAll(calledMethods);
+  });
+  test('All methods should be called', () {
+    var allMeth = new Set.from(allMethods);
+    allMeth.addAll(calledMethods);
 
-      expect(calledMethods.length, equals(allMeth.length - 1),
-          reason: allMeth.difference(calledMethods).toString());
-    });
+    expect(calledMethods.length, equals(allMeth.length - 1),
+        reason: allMeth.difference(calledMethods).toString());
   });
 }

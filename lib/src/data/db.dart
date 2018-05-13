@@ -1,3 +1,6 @@
+import 'package:webfaction_api/src/api/db.dart';
+
+/// See [DbApi]
 class DbUser {
   String username;
   String password;
@@ -9,6 +12,7 @@ class DbUser {
       : this(map['username'], map['password'] ?? '', map['db_type']);
 }
 
+/// See [DbApi]
 class Db {
   String name;
   String dbType;

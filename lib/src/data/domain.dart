@@ -1,3 +1,6 @@
+import 'package:webfaction_api/src/api/domain.dart';
+
+/// See [DomainApi]
 class Domain {
   String domain;
   List<String> subdomains;

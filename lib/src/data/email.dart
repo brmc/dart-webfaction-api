@@ -1,3 +1,6 @@
+import 'package:webfaction_api/src/api/email.dart';
+
+/// See [MailboxApi]
 class Mailbox {
   String name;
   bool enableSpamProtection;

@@ -1,6 +1,5 @@
-library webfaction_api;
-
-/// Here you will find
+/// This library defines the interaction with the webfaction API. [Client] is the intended entry point, but [Api] and its subclasses have been exposed so you can use them directly as you discover limitations or bugs
+library client;
 
 export 'src/client.dart';
 
