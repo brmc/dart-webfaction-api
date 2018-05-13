@@ -1,0 +1,10 @@
+language: dart
+dart:
+  - stable
+  - dev
+  - '1.24.0'
+
+dart_task:
+  - test
+  - dart_analyzer: lib
+  - dartfmt
