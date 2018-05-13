@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/brmc/dart-webfaction-api.svg?branch=master)](https://travis-ci.org/brmc/dart-webfaction-api)
+
 # webfaction_api
 
 A dart client for webfaction's RPC API.
