@@ -19,7 +19,7 @@ environment:
   sdk: '>1.24.0 <2.0.0'
 
 dependencies:
-  webfaction_api: '>=0.8.0'
+  webfaction_api: '>=0.8.1'
 ```
 
 2. `pub get`
@@ -47,7 +47,8 @@ dependencies:
         List<App> appListManuallyCreated = await client.app.list()
             .then((response) => response.map((data) => new App.fromMap(data)));
 
-        // ... the `createList` helper is also imported from there
+        // ... the `createList` helper is imported from 'create_list.dart`
+        // It uses mirrors and is incompatible with flutter
         List<App> appListUsingHelper = await client.app.list()
             .then((response) => createList(App, response));
 
@@ -85,6 +86,10 @@ dependencies:
 
 
 3. Call api methods.
+
+## Fluter compatibility: mirrors
+
+Neither `client.dart` nor `response.dart` use mirrors, however the `create_list.dart` helper does.
 
 ## Method location
 
