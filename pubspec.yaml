@@ -1,6 +1,6 @@
 name: webfaction_api
 description: A client for the Webfaction API
-version: 0.8.2
+version: 0.8.3
 author: Brian McClure <brian@mcclure.pw>
 homepage: https://github.com/brmc/dart-webfaction-api
 documentation:

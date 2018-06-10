@@ -19,7 +19,7 @@ environment:
   sdk: '>1.24.0 <2.0.0'
 
 dependencies:
-  webfaction_api: '>=0.8.2'
+  webfaction_api: '>=0.8.3'
 ```
 
 2. `pub get`
