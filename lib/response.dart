@@ -13,4 +13,3 @@ export 'src/data/email.dart';
 export 'src/data/misc.dart';
 export 'src/data/domain.dart';
 export 'src/data/shell_user.dart';
-export 'src/data/util.dart';

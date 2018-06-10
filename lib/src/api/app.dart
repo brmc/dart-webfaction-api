@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:webfaction_api/src/api/api.dart';
 import 'package:webfaction_api/src/data/app.dart';
-import 'package:webfaction_api/src/data/util.dart';
 
 /// Create, read, delete, and list operations for Webfaction operations
 ///
@@ -31,12 +30,8 @@ class AppApi extends Api {
   Future deleteFromInstance(App app) => delete(app.name);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-list_apps](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-list_apps)
-  ///
-  /// [createList] can be used to create [App] instances from the response
   Future list() => call('list_apps');
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-list_app_types](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-list_app_types)
-  ///
-  /// [createList] can be used to create [AppType] instances from the response
   Future listTypes() => call('list_app_types');
 }

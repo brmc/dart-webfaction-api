@@ -1,5 +1,4 @@
 import 'package:webfaction_api/src/api/general.dart';
-import 'package:webfaction_api/src/data/util.dart';
 
 /// See [GeneralApi]
 class DiskUsage {
@@ -16,10 +15,13 @@ class DiskUsage {
 
   DiskUsage.fromMap(Map map)
       : this(
-            createList(HomeDirectory, map['home_directories']),
-            createList(MailboxUsage, map['mailboxes']),
-            createList(MysqlDatabaseUsage, map['mysql_databases']),
-            createList(PostgresDatabaseUsage, map['postgresql_databases']),
+            map['home_directories']
+                .map((Map x) => new HomeDirectory.fromMap(x)),
+            map['mailboxes'].map((Map x) => new MailboxUsage.fromMap(x)),
+            map['mysql_databases']
+                .map((Map x) => new MysqlDatabaseUsage.fromMap(x)),
+            map['postgresql_databases']
+                .map((Map x) => new PostgresDatabaseUsage.fromMap(x)),
             map['total'],
             map['quota'],
             map['percentage']);

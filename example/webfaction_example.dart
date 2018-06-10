@@ -15,7 +15,8 @@ main() async {
         .list()
         .then((response) => response.map((data) => new App.fromMap(data)));
 
-    // ... the helper is also imported from there
+    // ... the `createList` helper is imported from 'createList.dart`
+    // It uses mirrors and is incompatible with flutter
     List<App> appListUsingHelper =
         await client.app.list().then((response) => createList(App, response));
 
