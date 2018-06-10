@@ -19,7 +19,7 @@ environment:
   sdk: '>1.24.0 <2.0.0'
 
 dependencies:
-  webfaction_api: '>=0.8.1'
+  webfaction_api: '>=0.8.2'
 ```
 
 2. `pub get`
@@ -46,11 +46,6 @@ dependencies:
         // Response objects imported from `response.dart`
         List<App> appListManuallyCreated = await client.app.list()
             .then((response) => response.map((data) => new App.fromMap(data)));
-
-        // ... the `createList` helper is imported from 'create_list.dart`
-        // It uses mirrors and is incompatible with flutter
-        List<App> appListUsingHelper = await client.app.list()
-            .then((response) => createList(App, response));
 
         App newApp = await client.app
             .create('MyNewApp', 'django-2.0.5_mod_wsgi-4.6.4_python-3.6')
@@ -86,10 +81,6 @@ dependencies:
 
 
 3. Call api methods.
-
-## Fluter compatibility: mirrors
-
-Neither `client.dart` nor `response.dart` use mirrors, however the `create_list.dart` helper does.
 
 ## Method location
 

@@ -1,3 +1,6 @@
+## 0.8.2
+- Removed `createList` helper
+
 ## 0.8.1
 - Isolated `createList` to its own package to allow compatibility with flutter
 

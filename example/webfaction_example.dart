@@ -15,11 +15,6 @@ main() async {
         .list()
         .then((response) => response.map((data) => new App.fromMap(data)));
 
-    // ... the `createList` helper is imported from 'create_list.dart`
-    // It uses mirrors and is incompatible with flutter
-    List<App> appListUsingHelper =
-        await client.app.list().then((response) => createList(App, response));
-
     App newApp = await client.app
         .create('MyNewApp', 'django-2.0.5_mod_wsgi-4.6.4_python-3.6')
         .then((response) => new App.fromMap(response));
