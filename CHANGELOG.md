@@ -1,3 +1,6 @@
+## 0.8.3
+- Bugfix: API's were not being set properly
+
 ## 0.8.2
 - Removed `createList` helper
 

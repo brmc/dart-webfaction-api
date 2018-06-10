@@ -75,7 +75,7 @@ class Client implements Api {
     var api = 2;
     var params = [_username, _password, _server, api];
     return call('login', params).then((response) {
-      _sessionId = response[0];
+      sessionId = response[0];
 
       return response;
     });
