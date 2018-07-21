@@ -16,10 +16,10 @@ Webfaction info: [https://www.webfaction.com/?aid=50399](https://www.webfaction.
 
 ```
 environment:
-  sdk: '>1.24.0 <2.0.0'
+  sdk: '>1.24.0 <3.0.0'
 
 dependencies:
-  webfaction_api: '>=0.8.3'
+  webfaction_api: '>=0.9.0'
 ```
 
 2. `pub get`

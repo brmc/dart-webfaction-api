@@ -1,3 +1,6 @@
+## 0.9.0
+- Dart 2.0 support
+
 ## 0.8.3
 - Bugfix: API's were not being set properly
 
