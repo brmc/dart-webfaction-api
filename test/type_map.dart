@@ -192,7 +192,7 @@ var signatureMap = {
   'create_user': {
     'username': String,
     'shell': String,
-    'groups': List,
+    'groups': [''].runtimeType,
   },
   'delete_user': {
     'username': String,
@@ -205,7 +205,7 @@ var signatureMap = {
     'code_before': String,
   },
   'set_apache_acl': {
-    'paths': List,
+    'paths': ['a'].runtimeType,
     'permission': String,
     'recursive': bool,
   },

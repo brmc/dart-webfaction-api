@@ -113,7 +113,7 @@ class EmailAddressApi extends Api {
   Future list() => call('list_emails');
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-update_email](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-update_email)
-  Future update(String address, List targets,
+  Future update(String address, List<String> targets,
           [bool autoresponderOn = false,
           String autoresponderSubject = '',
           String autoresponderMessage = '',

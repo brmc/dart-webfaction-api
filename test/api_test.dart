@@ -4,8 +4,8 @@ import 'package:test/test.dart';
 import 'package:webfaction_api/client.dart';
 import 'package:webfaction_api/response.dart';
 
-import 'type_order.dart';
 import 'type_map.dart';
+import 'type_order.dart';
 
 convertSnakeCaseToCamelCase(String str) => str.replaceAllMapped(
     new RegExp('_([a-z])'), (Match m) => m.group(1).toUpperCase());
@@ -19,24 +19,25 @@ void main() {
   var allMethods = parameterNameMap.keys;
   var calledMethods = new Set();
 
-  checkTypeOrder(Future<List> result) {
+  checkTypeOrder(Future<dynamic> result) {
     result.then((results) {
       var method = results[0];
       List params = results[1];
       calledMethods.add(method);
       expect(types.keys.contains(method), equals(true),
           reason: 'Types missing method: ${method}');
-      var expectedValues = new List()..addAll([String])..addAll(types[method]);
-      expect(params.length, equals(expectedValues.length),
+      var expectedTypes = new List()..addAll([String])..addAll(types[method]);
+      expect(params.length, equals(expectedTypes.length),
           reason: '${method} parameter mismatch');
 
       params.forEach((param) {
         var i = params.indexOf(param);
 
+        var actualType = param.runtimeType;
+        var expectedType = expectedTypes[i];
         // this is a dirty hack to dynamically check types from a list
         // todo: find out a better way to do this
-        expect(param.runtimeType.toString().split('<')[0],
-            equals(expectedValues[i].toString()),
+        expect(actualType, equals(expectedType),
             reason: '${method} parameter ${i} is wrong: ${param}');
       });
     });
@@ -205,10 +206,10 @@ void main() {
     });
     test('Checking Shell_userApi', () async {
       var api = new ShellUserApi('session', mockRpc);
-      var user = new User('asd', 'sh');
+      var user = new User('asd', 'sh', ['']);
       checkTypeOrder(api.changePassword('s', 's'));
       checkTypeOrder(api.changePasswordFromInstance(user, 'a'));
-      checkTypeOrder(api.create('as'));
+      checkTypeOrder(api.create('as', 'none', ['asdf']));
       checkTypeOrder(api.createFromInstance(user));
       checkTypeOrder(api.delete('sd'));
       checkTypeOrder(api.deleteFromInstance(user));
