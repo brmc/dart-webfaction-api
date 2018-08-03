@@ -50,7 +50,7 @@ class AppType {
     label = data['label'];
     description = data['description'];
     autostart = data['autostart'];
-    extraInfo = data['extra_info'];
     openPort = data['open_port'];
+    extraInfo = data['extra_info'];
   }
 }
