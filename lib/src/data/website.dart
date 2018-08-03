@@ -43,9 +43,8 @@ class Website {
     this.ip = ip.address;
     certificate = cert.name;
 
-    var combined = domains.map((Domain domain) =>
-        domain.subdomains.map((String subdomain) => '${subdomain}.${domain
-            .domain}'));
+    var combined = domains.map((Domain domain) => domain.subdomains
+        .map((String subdomain) => '${subdomain}.${domain.domain}'));
 
     subdomains = combined.reduce((a, b) => new List.from(a)..addAll(b));
 
