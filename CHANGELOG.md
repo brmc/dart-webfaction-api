@@ -1,4 +1,8 @@
-## 0.9.0
+## 0.9.1
+- Bugfix: Incorrect parameter order for App object instantiation from
+hashmap
+
+## 0.9.1
 - Dart 2.0 support
 
 ## 0.8.3
