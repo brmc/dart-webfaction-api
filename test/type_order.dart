@@ -18,22 +18,52 @@ var types = {
   'delete_email': [String],
   'list_emails': [],
   'change_mailbox_password': [String, String],
-  'update_email': [String,
-  [''].runtimeType, bool, String, String, String, String, String],
+  'update_email': [
+    String,
+    [''].runtimeType,
+    bool,
+    String,
+    String,
+    String,
+    String,
+    String
+  ],
   'create_certificate': [String, String, String, String],
   'delete_certificate': [String],
   'list_certificates': [],
   'update_certificate': [String, String, String, String],
-  'create_domain': [String, [''].runtimeType],
-  'delete_domain': [String, [''].runtimeType],
+  'create_domain': [
+    String,
+    [''].runtimeType
+  ],
+  'delete_domain': [
+    String,
+    [''].runtimeType
+  ],
   'list_domains': [],
-  'create_website': [String, String, bool, [''].runtimeType, String,
-  [['']].runtimeType],
+  'create_website': [
+    String,
+    String,
+    bool,
+    [''].runtimeType,
+    String,
+    [
+      ['']
+    ].runtimeType
+  ],
   'delete_website': [String, String, bool],
   'list_bandwidth_usage': [],
   'list_websites': [],
-  'update_website': [String, String, bool, [''].runtimeType, String,
-  [['']].runtimeType],
+  'update_website': [
+    String,
+    String,
+    bool,
+    [''].runtimeType,
+    String,
+    [
+      ['']
+    ].runtimeType
+  ],
   'create_app': [String, String, bool, String, bool],
   'delete_app': [String],
   'list_apps': [],
@@ -72,15 +102,26 @@ var types = {
   'list_dbs': [],
   'list_db_users': [],
   'revoke_db_permissions': [String, String, String],
-  'replace_in_file': [String, [''].runtimeType],
+  'replace_in_file': [
+    String,
+    [''].runtimeType
+  ],
   'write_file': [String, String, String],
   'change_user_password': [String, String],
-  'create_user': [String, String, [''].runtimeType],
+  'create_user': [
+    String,
+    String,
+    [''].runtimeType
+  ],
   'delete_user': [String],
   'list_users': [],
   'list_ips': [],
   'list_machines': [],
   'run_php_script': [String, String],
-  'set_apache_acl': [['a'].runtimeType, String, bool],
+  'set_apache_acl': [
+    ['a'].runtimeType,
+    String,
+    bool
+  ],
   'system': [String],
 };
