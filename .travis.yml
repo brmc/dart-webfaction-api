@@ -1,6 +1,5 @@
 language: dart
 dart:
-  - stable
   - dev
   - '2.0.0-dev.62.0'
 
