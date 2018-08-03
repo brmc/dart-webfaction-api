@@ -5,8 +5,8 @@ author: Brian McClure <brian@mcclure.pw>
 homepage: https://github.com/brmc/dart-webfaction-api
 documentation:
 environment:
-  sdk: '>=1.24.0 < 3.0.0'
+  sdk: '>=2.0.0-dev.62.0 <3.0.0'
 dependencies:
-  xml_rpc: '^0.2.1'
+  xml_rpc: '^0.2.2'
 dev_dependencies:
   test: '>=0.12.0'
