@@ -1,5 +1,5 @@
 ## 1.0.0
-### Improvesments:
+### Improvements:
 - RPC adapter class replaces RPC function call
 - Instantiates APIs on construction rather than when session changes
 - APIs made final
