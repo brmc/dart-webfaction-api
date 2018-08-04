@@ -16,10 +16,10 @@ Webfaction info: [https://www.webfaction.com/?aid=50399](https://www.webfaction.
 
 ```
 environment:
-  sdk: '>1.24.0 <3.0.0'
+  sdk: '>=2.0.0-dev.65.0 <3.0.0'
 
 dependencies:
-  webfaction_api: '>=0.9.2'
+  webfaction_api: '>=1.0.0'
 ```
 
 2. `pub get`
@@ -27,7 +27,7 @@ dependencies:
 ## Documentation
 
     ~/dart-webfaction-api/ $ dartdoc
-    ~/dart-webfaction-api/ $ pub serve doc/api
+    ~/dart-webfaction-api/ $ dhttpd --path doc/api
 
 ## Example
 
