@@ -37,4 +37,3 @@ class AppApi extends Api {
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-list_app_types](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-list_app_types)
   Future listTypes() => call('list_app_types');
 }
-

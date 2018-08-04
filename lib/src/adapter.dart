@@ -5,9 +5,9 @@ abstract class RpcAdapter {
   Future call(String methodName, List params);
 }
 
-const webfactionUrl = 'https://api.webfaction.com/';
-
 class WebfactionRpc implements RpcAdapter {
+  final webfactionUrl = 'https://api.webfaction.com/';
+
   const WebfactionRpc();
 
   @override
