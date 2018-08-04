@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:webfaction_api/src/adapter.dart';
-import 'package:webfaction_api/src/api/api.dart';
+import 'package:webfaction_api/src/api/simple/api.dart';
 import 'package:webfaction_api/src/data/app.dart';
 
 /// Create, read, delete, and list operations for Webfaction operations
@@ -37,3 +37,4 @@ class AppApi extends Api {
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-list_app_types](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-list_app_types)
   Future listTypes() => call('list_app_types');
 }
+

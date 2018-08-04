@@ -1,4 +1,4 @@
-import 'package:webfaction_api/src/api/general.dart';
+import 'package:webfaction_api/src/api/simple/general.dart';
 
 /// See [GeneralApi]
 class DiskUsage {

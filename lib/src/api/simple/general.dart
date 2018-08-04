@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:webfaction_api/src/adapter.dart';
-import 'package:webfaction_api/src/api/api.dart';
+import 'package:webfaction_api/src/api/simple/api.dart';
 
 /// List disc usage.  (The login command has been moved to [Client]
 class GeneralApi extends Api {

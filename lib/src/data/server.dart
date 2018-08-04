@@ -1,4 +1,4 @@
-import 'package:webfaction_api/src/api/server.dart';
+import 'package:webfaction_api/src/api/simple/server.dart';
 
 /// See [ServerApi]
 class Ip {

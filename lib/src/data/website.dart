@@ -1,4 +1,4 @@
-import 'package:webfaction_api/src/api/website.dart';
+import 'package:webfaction_api/src/api/simple/website.dart';
 import 'package:webfaction_api/src/data/app.dart';
 import 'package:webfaction_api/src/data/certificate.dart';
 import 'package:webfaction_api/src/data/domain.dart';

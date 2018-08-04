@@ -1,4 +1,4 @@
-import 'package:webfaction_api/src/api/email.dart';
+import 'package:webfaction_api/src/api/simple/email.dart';
 
 /// See [MailboxApi]
 class Mailbox {

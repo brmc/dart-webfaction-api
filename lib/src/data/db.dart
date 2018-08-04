@@ -1,4 +1,4 @@
-import 'package:webfaction_api/src/api/db.dart';
+import 'package:webfaction_api/src/api/simple/db.dart';
 
 /// See [DbApi]
 class DbUser {

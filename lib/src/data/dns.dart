@@ -1,4 +1,4 @@
-import 'package:webfaction_api/src/api/dns.dart';
+import 'package:webfaction_api/src/api/simple/dns.dart';
 
 /// See [DnsApi]
 class DnsOverride {

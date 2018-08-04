@@ -1,4 +1,4 @@
-import 'package:webfaction_api/src/api/app.dart';
+import 'package:webfaction_api/src/api/simple/app.dart';
 
 /// See [AppApi]
 class App {

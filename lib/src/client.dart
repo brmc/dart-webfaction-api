@@ -1,21 +1,21 @@
 import 'dart:async';
 
 import 'package:webfaction_api/src/adapter.dart';
-import 'package:webfaction_api/src/api/api.dart';
-import 'package:webfaction_api/src/api/certificate.dart';
-import 'package:webfaction_api/src/api/domain.dart';
-import 'package:webfaction_api/src/api/email.dart';
-import 'package:webfaction_api/src/api/general.dart';
-import 'package:webfaction_api/src/api/website.dart';
+import 'package:webfaction_api/src/api/simple/api.dart';
+import 'package:webfaction_api/src/api/simple/certificate.dart';
+import 'package:webfaction_api/src/api/simple/domain.dart';
+import 'package:webfaction_api/src/api/simple/email.dart';
+import 'package:webfaction_api/src/api/simple/general.dart';
+import 'package:webfaction_api/src/api/simple/website.dart';
 
-import './api/app.dart';
-import './api/cron.dart';
-import './api/db.dart';
-import './api/dns.dart';
-import './api/file.dart';
-import './api/misc.dart';
-import './api/server.dart';
-import './api/shell_user.dart';
+import './api/simple/app.dart';
+import './api/simple/cron.dart';
+import './api/simple/db.dart';
+import './api/simple/dns.dart';
+import './api/simple/file.dart';
+import './api/simple/misc.dart';
+import './api/simple/server.dart';
+import './api/simple/shell_user.dart';
 
 /// The main entry point to the API
 class Client implements Api {

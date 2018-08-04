@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:webfaction_api/src/adapter.dart';
-import 'package:webfaction_api/src/api/api.dart';
+import 'package:webfaction_api/src/api/simple/api.dart';
 import 'package:webfaction_api/src/data/domain.dart';
 
 /// Create, list, and delete domains

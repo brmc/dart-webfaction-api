@@ -1,4 +1,4 @@
-import 'package:webfaction_api/src/api/shell_user.dart';
+import 'package:webfaction_api/src/api/simple/shell_user.dart';
 
 /// See [ShellUserApi]
 class User {

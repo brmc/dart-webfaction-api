@@ -1,4 +1,4 @@
-import 'package:webfaction_api/src/api/misc.dart';
+import 'package:webfaction_api/src/api/simple/misc.dart';
 
 /// See [MiscApi]
 class PhpScript {

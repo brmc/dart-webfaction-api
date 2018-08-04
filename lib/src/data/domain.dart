@@ -1,4 +1,4 @@
-import 'package:webfaction_api/src/api/domain.dart';
+import 'package:webfaction_api/src/api/simple/domain.dart';
 
 /// See [DomainApi]
 class Domain {

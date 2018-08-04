@@ -1,4 +1,4 @@
-import 'package:webfaction_api/src/api/certificate.dart';
+import 'package:webfaction_api/src/api/simple/certificate.dart';
 
 /// See [CertificateApi]
 class Certificate {
