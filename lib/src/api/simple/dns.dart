@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:webfaction_api/src/adapter.dart';
-import 'package:webfaction_api/src/data/dns.dart';
+import 'package:webfaction_api/src/api/data/dns.dart';
 
 import 'api.dart';
 

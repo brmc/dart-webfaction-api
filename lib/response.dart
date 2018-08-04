@@ -1,15 +1,15 @@
 /// This library contains simple objects that can be passed around to work with api responses
 library response;
 
-export 'src/data/app.dart';
-export 'src/data/account.dart';
-export 'src/data/general.dart';
-export 'src/data/db.dart';
-export 'src/data/dns.dart';
-export 'src/data/certificate.dart';
-export 'src/data/server.dart';
-export 'src/data/website.dart';
-export 'src/data/email.dart';
-export 'src/data/misc.dart';
-export 'src/data/domain.dart';
-export 'src/data/shell_user.dart';
+export 'src/api/data/app.dart';
+export 'src/api/data/account.dart';
+export 'src/api/data/general.dart';
+export 'src/api/data/db.dart';
+export 'src/api/data/dns.dart';
+export 'src/api/data/certificate.dart';
+export 'src/api/data/server.dart';
+export 'src/api/data/website.dart';
+export 'src/api/data/email.dart';
+export 'src/api/data/misc.dart';
+export 'src/api/data/domain.dart';
+export 'src/api/data/shell_user.dart';

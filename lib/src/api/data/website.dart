@@ -1,8 +1,8 @@
 import 'package:webfaction_api/src/api/simple/website.dart';
-import 'package:webfaction_api/src/data/app.dart';
-import 'package:webfaction_api/src/data/certificate.dart';
-import 'package:webfaction_api/src/data/domain.dart';
-import 'package:webfaction_api/src/data/server.dart';
+import 'package:webfaction_api/src/api/data/app.dart';
+import 'package:webfaction_api/src/api/data/certificate.dart';
+import 'package:webfaction_api/src/api/data/domain.dart';
+import 'package:webfaction_api/src/api/data/server.dart';
 
 /// See [WebsiteApi]
 class SiteApp {

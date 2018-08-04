@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:webfaction_api/src/adapter.dart';
-import 'package:webfaction_api/src/data/shell_user.dart';
+import 'package:webfaction_api/src/api/data/shell_user.dart';
 
 import 'api.dart';
 
