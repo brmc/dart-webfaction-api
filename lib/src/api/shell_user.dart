@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/data/shell_user.dart';
 
 import 'api.dart';
@@ -8,7 +9,7 @@ import 'api.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#shell-users](https://docs.webfaction.com/xmlrpc-api/apiref.html#shell-users)
 class ShellUserApi extends Api {
-  ShellUserApi({Function rpc, String sessionId})
+  ShellUserApi({RpcAdapter rpc, String sessionId})
       : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-change_user_password](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-change_user_password)

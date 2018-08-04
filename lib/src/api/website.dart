@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/api/api.dart';
 import 'package:webfaction_api/src/data/website.dart';
 
@@ -7,7 +8,7 @@ import 'package:webfaction_api/src/data/website.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#websites](https://docs.webfaction.com/xmlrpc-api/apiref.html#websites)
 class WebsiteApi extends Api {
-  WebsiteApi({Function rpc, String sessionId})
+  WebsiteApi({RpcAdapter rpc, String sessionId})
       : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_website](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_website)

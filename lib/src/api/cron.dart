@@ -1,12 +1,14 @@
 import 'dart:async';
 
+import 'package:webfaction_api/src/adapter.dart';
+
 import 'api.dart';
 
 /// Create and delete Cronjobs
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#cron](https://docs.webfaction.com/xmlrpc-api/apiref.html#cron
 class CronApi extends Api {
-  CronApi({Function rpc, String sessionId})
+  CronApi({RpcAdapter rpc, String sessionId})
       : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_cronjob](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_cronjob)

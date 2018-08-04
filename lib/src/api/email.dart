@@ -1,11 +1,12 @@
 import 'dart:async';
 
+import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/api/api.dart';
 import 'package:webfaction_api/src/data/email.dart';
 
 /// CRUD and password management operations for mailboxes
 class MailboxApi extends Api {
-  MailboxApi({Function rpc, String sessionId})
+  MailboxApi({RpcAdapter rpc, String sessionId})
       : super(rpc: rpc, sessionId: sessionId);
 
   changePassword(String mailboxName, String password) =>
@@ -73,7 +74,7 @@ class MailboxApi extends Api {
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#addresses](https://docs.webfaction.com/xmlrpc-api/apiref.html#addresses)
 class EmailAddressApi extends Api {
-  EmailAddressApi({Function rpc, String sessionId})
+  EmailAddressApi({RpcAdapter rpc, String sessionId})
       : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_email](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_email)

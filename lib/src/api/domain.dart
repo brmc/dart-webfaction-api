@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/api/api.dart';
 import 'package:webfaction_api/src/data/domain.dart';
 
@@ -7,7 +8,7 @@ import 'package:webfaction_api/src/data/domain.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#domains](https://docs.webfaction.com/xmlrpc-api/apiref.html#domains)
 class DomainApi extends Api {
-  DomainApi({Function rpc, String sessionId})
+  DomainApi({RpcAdapter rpc, String sessionId})
       : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_domain](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_domain)

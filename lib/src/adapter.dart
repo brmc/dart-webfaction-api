@@ -8,6 +8,8 @@ abstract class RpcAdapter {
 const webfactionUrl = 'https://api.webfaction.com/';
 
 class WebfactionRpc implements RpcAdapter{
+  const WebfactionRpc();
+
   @override
   Future call(String methodName, List params) {
     return xml_rpc.call(webfactionUrl, methodName, params);

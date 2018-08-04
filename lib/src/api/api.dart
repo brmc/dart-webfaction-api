@@ -1,21 +1,20 @@
 import 'dart:async';
 
-import 'package:webfaction_api/src/constants.dart';
-import 'package:xml_rpc/client.dart' as xml_rpc;
+import 'package:webfaction_api/src/adapter.dart';
 
 /// Abstract class serving as the base for all other APIs
 abstract class Api {
   String sessionId;
-  final Function rpc;
+  final RpcAdapter rpc;
 
   /// Instantiated normally by [Client.login]
   ///
+  /// You can use your own RPC Adapter for [rpc]. See [RpcAdapter] for more
+  /// details
+  ///
   /// If you want to instantiate this yourself, the [sessionId] is returned
   /// after logging in.
-  ///
-  /// You can use your own RPC implementation for [rpc]. It should be a
-  /// [Function] that returns a [Future]
-  Api({this.rpc = xml_rpc.call, this.sessionId});
+  Api({this.rpc = const WebfactionRpc(), this.sessionId});
 
   /// Makes an unstructured remote procedure call
   ///
@@ -26,6 +25,6 @@ abstract class Api {
     params = params ?? [];
     params.insert(0, sessionId);
 
-    return rpc(webfactionUrl, method, params);
+    return rpc.call(method, params);
   }
 }

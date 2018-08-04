@@ -1,13 +1,12 @@
 import 'dart:async';
 
+import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/api/api.dart';
 import 'package:webfaction_api/src/api/certificate.dart';
 import 'package:webfaction_api/src/api/domain.dart';
 import 'package:webfaction_api/src/api/email.dart';
 import 'package:webfaction_api/src/api/general.dart';
 import 'package:webfaction_api/src/api/website.dart';
-import 'package:webfaction_api/src/constants.dart';
-import 'package:xml_rpc/client.dart' as xml_rpc;
 
 import './api/app.dart';
 import './api/cron.dart';
@@ -23,7 +22,7 @@ class Client implements Api {
   String _username;
   String _password;
   String _server;
-  Function rpc;
+  RpcAdapter rpc;
 
   String _sessionId;
 
@@ -43,7 +42,8 @@ class Client implements Api {
   final WebsiteApi website;
 
   Client(this._username, this._password, this._server,
-      [this.rpc = xml_rpc.call]) : app = AppApi(rpc: rpc),
+      [this.rpc = const WebfactionRpc()])
+      : app = AppApi(rpc: rpc),
         certificate = CertificateApi(rpc: rpc),
         cron = CronApi(rpc: rpc),
         db = DbApi(rpc: rpc),
@@ -102,6 +102,6 @@ class Client implements Api {
   /// [params]
   @override
   Future call(String method, [List params]) {
-    return rpc(webfactionUrl, method, params);
+    return rpc.call(method, params);
   }
 }

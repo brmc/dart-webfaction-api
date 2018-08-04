@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/data/misc.dart';
 
 import 'api.dart';
@@ -8,7 +9,7 @@ import 'api.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#miscellaneous](https://docs.webfaction.com/xmlrpc-api/apiref.html#miscellaneous)
 class MiscApi extends Api {
-  MiscApi({Function rpc, String sessionId})
+  MiscApi({RpcAdapter rpc, String sessionId})
       : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-run_php_script](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-run_php_script)

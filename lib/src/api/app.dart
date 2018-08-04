@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/api/api.dart';
 import 'package:webfaction_api/src/data/app.dart';
 
@@ -7,7 +8,7 @@ import 'package:webfaction_api/src/data/app.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#applications](https://docs.webfaction.com/xmlrpc-api/apiref.html#applications)
 class AppApi extends Api {
-  AppApi({Function rpc, String sessionId})
+  AppApi({RpcAdapter rpc, String sessionId})
       : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_app](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_app)

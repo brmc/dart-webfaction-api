@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/api/api.dart';
 import 'package:webfaction_api/src/data/certificate.dart';
 
@@ -7,7 +8,7 @@ import 'package:webfaction_api/src/data/certificate.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#certificates](https://docs.webfaction.com/xmlrpc-api/apiref.html#certificates
 class CertificateApi extends Api {
-  CertificateApi({Function rpc, String sessionId})
+  CertificateApi({RpcAdapter rpc, String sessionId})
       : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_certificate](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_certificate)

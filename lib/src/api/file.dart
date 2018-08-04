@@ -1,12 +1,14 @@
 import 'dart:async';
 
+import 'package:webfaction_api/src/adapter.dart';
+
 import 'api.dart';
 
 /// Write and edit files on your server
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#files](https://docs.webfaction.com/xmlrpc-api/apiref.html#files)
 class FileApi extends Api {
-  FileApi({Function rpc, String sessionId})
+  FileApi({RpcAdapter rpc, String sessionId})
       : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-replace_in_file](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-replace_in_file)

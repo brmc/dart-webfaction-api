@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/data/dns.dart';
 
 import 'api.dart';
@@ -8,7 +9,7 @@ import 'api.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#dns](https://docs.webfaction.com/xmlrpc-api/apiref.html#dns)
 class DnsApi extends Api {
-  DnsApi({Function rpc, String sessionId})
+  DnsApi({RpcAdapter rpc, String sessionId})
       : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_dns_override](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_dns_override)
