@@ -1,4 +1,11 @@
+## 1.0.0
+### Improvesments:
+- RPC adapter class replaces RPC function call
+- Instantiates APIs on construction rather than when session changes
+- APIs made final
+
 ## 0.9.2
+- Bugfix: Unfixed bugfix :)
 
 ## 0.9.1
 - Bugfix: Incorrect parameter order for App object instantiation from
