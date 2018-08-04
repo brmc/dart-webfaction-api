@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:webfaction_api/src/adapter.dart';
 
-import 'api.dart';
+import 'package:webfaction_api/src/api/api.dart';
 
 /// List IPs and machines
 ///

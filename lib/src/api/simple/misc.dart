@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/api/object/misc.dart';
 
-import 'api.dart';
+import 'package:webfaction_api/src/api/api.dart';
 
 /// Execute shell commands, run php scripts, and set Apache ACL
 ///

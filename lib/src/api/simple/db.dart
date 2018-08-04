@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/api/object/db.dart';
 
-import 'api.dart';
+import 'package:webfaction_api/src/api/api.dart';
 
 /// CRUD, authentication and permissions for databases and database users
 ///

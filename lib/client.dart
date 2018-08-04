@@ -3,7 +3,7 @@ library client;
 
 export 'src/client.dart';
 
-export 'src/api/simple/api.dart';
+export 'package:webfaction_api/src/api/api.dart';
 export 'src/api/simple/app.dart';
 export 'src/api/simple/certificate.dart';
 export 'src/api/simple/cron.dart';
