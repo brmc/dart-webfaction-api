@@ -27,23 +27,36 @@ class Client implements Api {
 
   String _sessionId;
 
-  AppApi app;
-  CertificateApi certificate;
-  CronApi cron;
-  DbApi db;
-  DnsApi dns;
-  DomainApi domain;
-  EmailAddressApi email;
-  FileApi file;
-  GeneralApi general;
-  MailboxApi mailbox;
-  MiscApi misc;
-  ServerApi server;
-  ShellUserApi shellUser;
-  WebsiteApi website;
+  final AppApi app;
+  final CertificateApi certificate;
+  final CronApi cron;
+  final DbApi db;
+  final DnsApi dns;
+  final DomainApi domain;
+  final EmailAddressApi email;
+  final FileApi file;
+  final GeneralApi general;
+  final MailboxApi mailbox;
+  final MiscApi misc;
+  final ServerApi server;
+  final ShellUserApi shellUser;
+  final WebsiteApi website;
 
   Client(this._username, this._password, this._server,
-      [this.rpc = xml_rpc.call]);
+      [this.rpc = xml_rpc.call]) : app = AppApi(rpc: rpc),
+        certificate = CertificateApi(rpc: rpc),
+        cron = CronApi(rpc: rpc),
+        db = DbApi(rpc: rpc),
+        dns = DnsApi(rpc: rpc),
+        domain = DomainApi(rpc: rpc),
+        email = EmailAddressApi(rpc: rpc),
+        file = FileApi(rpc: rpc),
+        general = GeneralApi(rpc: rpc),
+        mailbox = MailboxApi(rpc: rpc),
+        misc = MiscApi(rpc: rpc),
+        server = ServerApi(rpc: rpc),
+        shellUser = ShellUserApi(rpc: rpc),
+        website = WebsiteApi(rpc: rpc);
 
   String get sessionId => _sessionId;
 
@@ -51,20 +64,20 @@ class Client implements Api {
   set sessionId(String session) {
     _sessionId = session;
 
-    app = new AppApi(rpc: rpc, sessionId: session);
-    certificate = new CertificateApi(rpc: rpc, sessionId: session);
-    cron = new CronApi(rpc: rpc, sessionId: session);
-    db = new DbApi(rpc: rpc, sessionId: session);
-    dns = new DnsApi(rpc: rpc, sessionId: session);
-    domain = new DomainApi(rpc: rpc, sessionId: session);
-    email = new EmailAddressApi(rpc: rpc, sessionId: session);
-    file = new FileApi(rpc: rpc, sessionId: session);
-    general = new GeneralApi(rpc: rpc, sessionId: session);
-    mailbox = new MailboxApi(rpc: rpc, sessionId: session);
-    misc = new MiscApi(rpc: rpc, sessionId: session);
-    server = new ServerApi(rpc: rpc, sessionId: session);
-    shellUser = new ShellUserApi(rpc: rpc, sessionId: session);
-    website = new WebsiteApi(rpc: rpc, sessionId: session);
+    app.sessionId = session;
+    certificate.sessionId = session;
+    cron.sessionId = session;
+    db.sessionId = session;
+    dns.sessionId = session;
+    domain.sessionId = session;
+    email.sessionId = session;
+    file.sessionId = session;
+    general.sessionId = session;
+    mailbox.sessionId = session;
+    misc.sessionId = session;
+    server.sessionId = session;
+    shellUser.sessionId = session;
+    website.sessionId = session;
   }
 
   /// Logs in to the Webfaction API
