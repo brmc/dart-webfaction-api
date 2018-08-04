@@ -42,7 +42,7 @@ var signatureMap = {
   'list_emails': {},
   'update_email': {
     'email_address': String,
-    'targets': List,
+    'targets': [''].runtimeType,
     'autoresponder_on': bool,
     'autoresponder_subject': String,
     'autoresponder_message': String,
