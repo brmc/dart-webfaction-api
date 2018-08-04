@@ -7,7 +7,8 @@ import 'package:webfaction_api/src/data/certificate.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#certificates](https://docs.webfaction.com/xmlrpc-api/apiref.html#certificates
 class CertificateApi extends Api {
-  CertificateApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
+  CertificateApi({Function rpc, String sessionId})
+      : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_certificate](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_certificate)
   Future create(String name, String certificate, String privateKey,

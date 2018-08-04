@@ -7,7 +7,8 @@ import 'package:webfaction_api/src/data/domain.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#domains](https://docs.webfaction.com/xmlrpc-api/apiref.html#domains)
 class DomainApi extends Api {
-  DomainApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
+  DomainApi({Function rpc, String sessionId})
+      : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_domain](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_domain)
   Future create(String domain, List<String> subdomains) {

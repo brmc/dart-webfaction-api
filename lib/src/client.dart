@@ -23,7 +23,7 @@ class Client implements Api {
   String _username;
   String _password;
   String _server;
-  Function _rpc;
+  Function rpc;
 
   String _sessionId;
 
@@ -43,7 +43,7 @@ class Client implements Api {
   WebsiteApi website;
 
   Client(this._username, this._password, this._server,
-      [this._rpc = xml_rpc.call]);
+      [this.rpc = xml_rpc.call]);
 
   String get sessionId => _sessionId;
 
@@ -51,20 +51,20 @@ class Client implements Api {
   set sessionId(String session) {
     _sessionId = session;
 
-    app = new AppApi(session, _rpc);
-    certificate = new CertificateApi(session, _rpc);
-    cron = new CronApi(session, _rpc);
-    db = new DbApi(session, _rpc);
-    dns = new DnsApi(session, _rpc);
-    domain = new DomainApi(session, _rpc);
-    email = new EmailAddressApi(session, _rpc);
-    file = new FileApi(session, _rpc);
-    general = new GeneralApi(session, _rpc);
-    mailbox = new MailboxApi(session, _rpc);
-    misc = new MiscApi(session, _rpc);
-    server = new ServerApi(session, _rpc);
-    shellUser = new ShellUserApi(session, _rpc);
-    website = new WebsiteApi(session, _rpc);
+    app = new AppApi(rpc: rpc, sessionId: session);
+    certificate = new CertificateApi(rpc: rpc, sessionId: session);
+    cron = new CronApi(rpc: rpc, sessionId: session);
+    db = new DbApi(rpc: rpc, sessionId: session);
+    dns = new DnsApi(rpc: rpc, sessionId: session);
+    domain = new DomainApi(rpc: rpc, sessionId: session);
+    email = new EmailAddressApi(rpc: rpc, sessionId: session);
+    file = new FileApi(rpc: rpc, sessionId: session);
+    general = new GeneralApi(rpc: rpc, sessionId: session);
+    mailbox = new MailboxApi(rpc: rpc, sessionId: session);
+    misc = new MiscApi(rpc: rpc, sessionId: session);
+    server = new ServerApi(rpc: rpc, sessionId: session);
+    shellUser = new ShellUserApi(rpc: rpc, sessionId: session);
+    website = new WebsiteApi(rpc: rpc, sessionId: session);
   }
 
   /// Logs in to the Webfaction API
@@ -89,6 +89,6 @@ class Client implements Api {
   /// [params]
   @override
   Future call(String method, [List params]) {
-    return _rpc(webfactionUrl, method, params);
+    return rpc(webfactionUrl, method, params);
   }
 }

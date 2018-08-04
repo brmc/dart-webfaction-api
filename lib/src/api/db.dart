@@ -8,7 +8,8 @@ import 'api.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#databases](https://docs.webfaction.com/xmlrpc-api/apiref.html#databases)
 class DbApi extends Api {
-  DbApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
+  DbApi({Function rpc, String sessionId})
+      : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-change_db_password](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-change_db_password)
   Future changePassword(String username, password, String dbType) =>

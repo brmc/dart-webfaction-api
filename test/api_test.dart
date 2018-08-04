@@ -45,7 +45,7 @@ void main() {
 
   group('All api calls should match the specified types', () {
     test('Checking AppApi', () async {
-      var api = new AppApi('sessionid', mockRpc);
+      var api = new AppApi(sessionId: 'sessionid', rpc: mockRpc);
       checkTypeOrder(api.create('pigs', 'satan', false, 'aslkdj', true));
       checkTypeOrder(api.createFromInstance(new App('d', 'df')));
       checkTypeOrder(api.list());
@@ -53,16 +53,16 @@ void main() {
       checkTypeOrder(api.delete('asdf'));
     });
     test('Checking GeneralApi', () async {
-      var api = new GeneralApi('session', mockRpc);
+      var api = new GeneralApi(sessionId: 'session', rpc: mockRpc);
       checkTypeOrder(api.listDiskUsage());
     });
     test('Checking CronApi', () async {
-      var api = new CronApi('session', mockRpc);
+      var api = new CronApi(sessionId: 'session', rpc: mockRpc);
       checkTypeOrder(api.create('asdf'));
       checkTypeOrder(api.delete('asdf'));
     });
     test('Checking MiscApi', () async {
-      var api = new MiscApi('session', mockRpc);
+      var api = new MiscApi(sessionId: 'session', rpc: mockRpc);
       checkTypeOrder(api.runPhpScript('asdf', 'asdfasd'));
       checkTypeOrder(api.runPhpScriptFromInstance(new PhpScript('as', 'asdf')));
       checkTypeOrder(api.setApacheAcl(['asdf'], 'asdf', false));
@@ -72,7 +72,7 @@ void main() {
       checkTypeOrder(api.systemFromInstance(new Cmd('asdf')));
     });
     test('Checking DB api', () async {
-      var api = new DbApi('session', mockRpc);
+      var api = new DbApi(sessionId: 'session', rpc: mockRpc);
       var db = new Db('asdf', 'asdf', 'asdf', 'asdf');
       var dbUser = new DbUser('username', 'password', 'dbType');
 
@@ -97,7 +97,7 @@ void main() {
     });
 
     test('Checking DnsApi', () async {
-      var api = new DnsApi('session', mockRpc);
+      var api = new DnsApi(sessionId: 'session', rpc: mockRpc);
       checkTypeOrder(api.listOverrides());
       checkTypeOrder(api.createOverride('domain'));
       checkTypeOrder(api.createOverrideFromInstance(new DnsOverride('asdf')));
@@ -106,12 +106,12 @@ void main() {
       checkTypeOrder(api.listOverrides());
     });
     test('Checking ServerApi', () async {
-      var api = new ServerApi('session', mockRpc);
+      var api = new ServerApi(sessionId: 'session', rpc: mockRpc);
       checkTypeOrder(api.listIps());
       checkTypeOrder(api.listMachines());
     });
     test('Checking CertificateApi', () async {
-      var api = new CertificateApi('session', mockRpc);
+      var api = new CertificateApi(sessionId: 'session', rpc: mockRpc);
       checkTypeOrder(api.create('name', 'certificate', 'privateKey'));
       var cert = new Certificate('name', 'certificate', 'privateKey');
       checkTypeOrder(api.createFromInstance(cert));
@@ -122,12 +122,12 @@ void main() {
       checkTypeOrder(api.updateFromInstance(cert));
     });
     test('Checking FileApi', () async {
-      var api = new FileApi('session', mockRpc);
+      var api = new FileApi(sessionId: 'session', rpc: mockRpc);
       checkTypeOrder(api.replace('file', 'textToReplace', 'replacementText'));
       checkTypeOrder(api.write('file', 'text'));
     });
     test('Checking EmailApi', () async {
-      var api = new EmailAddressApi('session', mockRpc);
+      var api = new EmailAddressApi(sessionId: 'session', rpc: mockRpc);
       var email = new Email('address', 'targets');
       checkTypeOrder(api.list());
       checkTypeOrder(api.delete('address'));
@@ -138,7 +138,7 @@ void main() {
       checkTypeOrder(api.updateFromInstance(email));
     });
     test('Checking MailboxApi', () async {
-      var api = new MailboxApi('session', mockRpc);
+      var api = new MailboxApi(sessionId: 'session', rpc: mockRpc);
       var mailbox = new Mailbox('asdf', 'asdf');
       checkTypeOrder(api.list());
       checkTypeOrder(api.delete('address'));
@@ -151,7 +151,7 @@ void main() {
       checkTypeOrder(api.changePasswordFromInstance(mailbox, 'password'));
     });
     test('Checking DomainApi', () async {
-      var api = new DomainApi('session', mockRpc);
+      var api = new DomainApi(sessionId: 'session', rpc: mockRpc);
       var domain = new Domain('domain', ['subdomains']);
       checkTypeOrder(api.list());
       checkTypeOrder(api.delete('address', ['asdf']));
@@ -160,7 +160,7 @@ void main() {
       checkTypeOrder(api.createFromInstance(domain));
     });
     test('Checking WebsiteApi', () async {
-      var api = new WebsiteApi('session', mockRpc);
+      var api = new WebsiteApi(sessionId: 'session', rpc: mockRpc);
       var website = new Website(
           'name',
           'ip',
@@ -196,7 +196,7 @@ void main() {
       checkTypeOrder(api.list());
     });
     test('Checking DnsApi', () async {
-      var api = new DnsApi('session', mockRpc);
+      var api = new DnsApi(sessionId: 'session', rpc: mockRpc);
       var override = new DnsOverride('domain');
       checkTypeOrder(api.createOverride('domain'));
       checkTypeOrder(api.createOverrideFromInstance(override));
@@ -205,7 +205,7 @@ void main() {
       checkTypeOrder(api.deleteOverrideFromInstance(override));
     });
     test('Checking Shell_userApi', () async {
-      var api = new ShellUserApi('session', mockRpc);
+      var api = new ShellUserApi(sessionId: 'session', rpc: mockRpc);
       var user = new User('asd', 'sh', ['']);
       checkTypeOrder(api.changePassword('s', 's'));
       checkTypeOrder(api.changePasswordFromInstance(user, 'a'));

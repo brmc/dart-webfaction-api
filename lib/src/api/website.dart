@@ -7,7 +7,8 @@ import 'package:webfaction_api/src/data/website.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#websites](https://docs.webfaction.com/xmlrpc-api/apiref.html#websites)
 class WebsiteApi extends Api {
-  WebsiteApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
+  WebsiteApi({Function rpc, String sessionId})
+      : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_website](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_website)
   Future create(

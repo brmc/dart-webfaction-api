@@ -8,7 +8,8 @@ import 'api.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#miscellaneous](https://docs.webfaction.com/xmlrpc-api/apiref.html#miscellaneous)
 class MiscApi extends Api {
-  MiscApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
+  MiscApi({Function rpc, String sessionId})
+      : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-run_php_script](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-run_php_script)
   Future runPhpScript(String path, String codeBefore) =>

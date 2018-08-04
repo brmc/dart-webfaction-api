@@ -8,7 +8,8 @@ import 'api.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#dns](https://docs.webfaction.com/xmlrpc-api/apiref.html#dns)
 class DnsApi extends Api {
-  DnsApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
+  DnsApi({Function rpc, String sessionId})
+      : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_dns_override](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_dns_override)
   Future createOverride(String domain,

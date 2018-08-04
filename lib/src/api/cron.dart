@@ -6,7 +6,8 @@ import 'api.dart';
 ///
 /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#cron](https://docs.webfaction.com/xmlrpc-api/apiref.html#cron
 class CronApi extends Api {
-  CronApi(String sessionId, [Function rpc]) : super(sessionId, rpc);
+  CronApi({Function rpc, String sessionId})
+      : super(rpc: rpc, sessionId: sessionId);
 
   /// See [https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_cronjob](https://docs.webfaction.com/xmlrpc-api/apiref.html#method-create_cronjob)
   Future create(String line) => call('create_cronjob', [line]);
