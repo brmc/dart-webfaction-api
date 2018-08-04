@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/api/simple/api.dart';
-import 'package:webfaction_api/src/api/data/certificate.dart';
+import 'package:webfaction_api/src/api/object/certificate.dart';
 
 /// CRUD operations for SSL/TLS certificates
 ///

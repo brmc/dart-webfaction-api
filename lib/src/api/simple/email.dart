@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/api/simple/api.dart';
-import 'package:webfaction_api/src/api/data/email.dart';
+import 'package:webfaction_api/src/api/object/email.dart';
 
 /// CRUD and password management operations for mailboxes
 class MailboxApi extends Api {
