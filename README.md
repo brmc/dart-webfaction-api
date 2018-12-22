@@ -2,7 +2,7 @@
 
 # webfaction_api
 
-A dart client for webfaction's RPC API.
+A client wrapper for webfaction's RPC API.
 
 Official reference: [https://docs.webfaction.com/xmlrpc-api/](https://docs.webfaction.com/xmlrpc-api/)
 
@@ -16,7 +16,7 @@ Webfaction info: [https://www.webfaction.com/?aid=50399](https://www.webfaction.
 
 ```
 environment:
-  sdk: '>=2.0.0-dev.65.0 <3.0.0'
+  sdk: '>=2.0.0 <3.0.0'
 
 dependencies:
   webfaction_api: '>=1.0.0'
