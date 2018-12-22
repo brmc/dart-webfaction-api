@@ -7,5 +7,6 @@ dart:
 
 dart_task:
   - test
-  - dart_analyzer: lib
+  - dart_analyzer: --fatal-warnings lib
   - dartfmt
+  - pub publish --dry-run
