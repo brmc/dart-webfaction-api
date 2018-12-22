@@ -15,8 +15,7 @@ class DiskUsage {
 
   DiskUsage.fromMap(Map map)
       : this(
-            map['home_directories']
-                .map((Map x) => HomeDirectory.fromMap(x)),
+            map['home_directories'].map((Map x) => HomeDirectory.fromMap(x)),
             map['mailboxes'].map((Map x) => MailboxUsage.fromMap(x)),
             map['mysql_databases']
                 .map((Map x) => MysqlDatabaseUsage.fromMap(x)),
