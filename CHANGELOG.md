@@ -1,3 +1,6 @@
+## 1.0.1
+- Maintenance and adjustments for dart 2 syntax
+
 ## 1.0.0
 ### Improvements:
 - RPC adapter class replaces RPC function call

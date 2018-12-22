@@ -1,11 +1,11 @@
 name: webfaction_api
 description: A client for the Webfaction API
-version: 1.0.0
+version: 1.0.1
 author: Brian McClure <brian@mcclure.pw>
 homepage: https://github.com/brmc/dart-webfaction-api
 documentation:
 environment:
-  sdk: '>=2.0.0-dev.65.0 <3.0.0'
+  sdk: '>=2.0.0 <3.0.0'
 dependencies:
   xml_rpc: '^0.2.2'
 dev_dependencies:
