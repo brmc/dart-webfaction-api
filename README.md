@@ -35,7 +35,7 @@ dependencies:
     import 'package:webfaction_api/response.dart';
 
     main() async {
-      var client = new Client('username', 'password', 'SomeServer543');
+      var client = Client('username', 'password', 'SomeServer543');
       await client.login();
 
       // or
@@ -45,14 +45,14 @@ dependencies:
 
         // Response objects imported from `response.dart`
         List<App> appListManuallyCreated = await client.app.list()
-            .then((response) => response.map((data) => new App.fromMap(data)));
+            .then((response) => response.map((data) => App.fromMap(data)));
 
         App newApp = await client.app
             .create('MyNewApp', 'django-2.0.5_mod_wsgi-4.6.4_python-3.6')
-            .then((response) => new App.fromMap(response));
+            .then((response) => App.fromMap(response));
 
         // Or pass objects around
-        App app = new App('MyNewApp', 'django-2.0.5_mod_wsgi-4.6.4_python-3.6');
+        App app = App('MyNewApp', 'django-2.0.5_mod_wsgi-4.6.4_python-3.6');
         client.app.createFromInstance(app)
             .then((_) => client.app.deleteFromInstance(app));
       });
@@ -71,7 +71,7 @@ dependencies:
 1. Instantiate a client with your webfaction `username`, `password`, and `server name`
 
 
-    var client = new Client('username', 'password, 'Server153');
+    var client = Client('username', 'password, 'Server153');
 
 
 2. Login. The session ID is stored in the client so there is no need to pass it to subsequent calls. According to webfaction, the session ID remains valid for one hour

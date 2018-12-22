@@ -46,8 +46,8 @@ class Website {
     var combined = domains.map((Domain domain) => domain.subdomains
         .map((String subdomain) => '${subdomain}.${domain.domain}'));
 
-    subdomains = combined.reduce((a, b) => new List.from(a)..addAll(b));
+    subdomains = combined.reduce((a, b) => List.from(a)..addAll(b));
 
-    siteApps = new List.from(apps.map((app) => [app.appName, app.path]));
+    siteApps = List.from(apps.map((app) => [app.appName, app.path]));
   }
 }

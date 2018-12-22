@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:webfaction_api/src/adapter.dart';
 import 'package:webfaction_api/src/api/simple/app.dart';
 
 /// See [AppApi]
@@ -36,21 +39,10 @@ class AppType {
   String extraInfo;
   bool openPort;
 
-  AppType(
-    this.name,
-    this.label,
-    this.description,
-    this.autostart,
-    this.openPort,
-    this.extraInfo,
-  );
+  AppType(this.name, this.label, this.description, this.autostart,
+      this.openPort, this.extraInfo);
 
-  AppType.fromMap(data) {
-    name = data['name'];
-    label = data['label'];
-    description = data['description'];
-    autostart = data['autostart'];
-    openPort = data['open_port'];
-    extraInfo = data['extra_info'];
-  }
+  AppType.fromMap(data)
+      : this(data['name'], data['label'], data['description'],
+            data['autostart'], data['open_port'], data['extra_info']);
 }

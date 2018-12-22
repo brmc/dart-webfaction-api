@@ -2,7 +2,7 @@ import 'package:webfaction_api/client.dart';
 import 'package:webfaction_api/response.dart';
 
 main() async {
-  var client = new Client('username', 'password', 'SomeServer543');
+  var client = Client('username', 'password', 'SomeServer543');
   await client.login();
 
   // or
@@ -13,14 +13,14 @@ main() async {
     // Objects imported from `response.dart`
     List<App> appListManuallyCreated = await client.app
         .list()
-        .then((response) => response.map((data) => new App.fromMap(data)));
+        .then((response) => response.map((data) => App.fromMap(data)));
 
     App newApp = await client.app
         .create('MyNewApp', 'django-2.0.5_mod_wsgi-4.6.4_python-3.6')
-        .then((response) => new App.fromMap(response));
+        .then((response) => App.fromMap(response));
 
     // Or pass objects around
-    App app = new App('MyNewApp', 'django-2.0.5_mod_wsgi-4.6.4_python-3.6');
+    App app = App('MyNewApp', 'django-2.0.5_mod_wsgi-4.6.4_python-3.6');
     client.app
         .createFromInstance(app)
         .then((_) => client.app.deleteFromInstance(app));
